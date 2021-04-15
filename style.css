@@ -55,11 +55,11 @@
 }
 
 #list-books li:hover {
-    border-left: solid 4px #745397;
+    border-left: solid 4px #7277FD;
 }
 
 .delete {
-    background-color: #745397;
+    background-color: #7277FD;
     color: #fff;
     padding: 7px;
     border-radius: 5px;
@@ -81,12 +81,13 @@
     border: solid 2px #EEEDEF;
     border-radius: 5px 0 0 5px;
 }
+
 input:focus {
    outline: solid thin rgb(140, 140, 252);
 }
 #add-books button {
     color: #fff;
-    background-color: #745397;
+    background-color: #7277FD;
     border: none;
     padding: 0 20px;
     border-radius: 0 5px 5px 0;
@@ -94,4 +95,67 @@ input:focus {
 
 #add-books button:hover {
     background-color: #3d3b3f;
+}
+
+.container-modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    animation: sumiModal .5s;
+}
+
+.modal {
+    max-width: 18rem;
+    padding: 2rem;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
+    position: relative;
+    border-radius: .2rem;
+    border: 2px solid #7277FD;
+}
+.btn-fechar {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 100%;
+    background-color: #7277FD;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.sumiModal {
+}
+
+@keyframes sumiModal {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 10%;
+    }
+    75% {
+        left: -5%;
+    }
+    100% {
+        left: 0;
+    }
 }

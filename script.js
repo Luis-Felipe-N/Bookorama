@@ -50,7 +50,7 @@ wrapperListBooks.addEventListener('click', function(e){
     for(i = 0; i < listBooksNames.length; i++) {
         if (value == listBooksNames[i].textContent) {
             temLivro++
-            console.log('Este livro já existe.')
+            criarModal('Você já adicionou este livro!')
         }
     };
 
@@ -80,3 +80,32 @@ function addBook(value) {
 
     listBooks.appendChild(li);
 };
+
+function criarModal(text) {
+    const containerModal = document.createElement('div')
+    const modal = document.createElement('span')
+    const btnFechar = document.createElement('button')
+    const imgLivro = document.createElement('img')
+
+
+    containerModal.setAttribute('class', 'container-modal')
+    modal.setAttribute('class', 'modal')
+    imgLivro.setAttribute('src', '/assets/img-modal.svg')
+    btnFechar.className = 'btn-fechar'
+    btnFechar.innerHTML = '<i class="fas fa-times"></i>'
+
+    modal.appendChild(btnFechar)
+    modal.appendChild(imgLivro)
+    modal.innerHTML += text
+    containerModal.appendChild(modal)
+    document.body.appendChild(containerModal)
+
+    containerModal.addEventListener('click', fecharModal)
+}
+
+function fecharModal(e) {
+    if (e.target.className === 'container-modal' || e.target.className === 'fas fa-times' || e.target.className === 'btn-fechar') {
+        this.classList = 'sumiModal'
+        this.parentNode.removeChild(this)
+    }
+}
